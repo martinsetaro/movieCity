@@ -1,11 +1,12 @@
 import {useState,useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
-import ItemMovies from './ItemMovies';
+import Buscador from './Buscador';
 
 const FirstPage = () => {
 
   const [movie,setMovie]=useState([]);
+  const token = localStorage.getItem('dataToken');
 
   const url = 'https://api.themoviedb.org/3/discover/movie?api_key=677650d0c73145c6417b08814d591f68&language=es-ES&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate';
 
@@ -18,6 +19,7 @@ const FirstPage = () => {
 
   return (
     <div className='bg-negro pt-14'>
+      {token && <Buscador/>}
       <h1 className='text-center text-white uppercase text-5xl'>Peliculas en cartelera de cine</h1>
       <div className='w-full flex flex-wrap justify-between'>
         {movie.map( movies =>{

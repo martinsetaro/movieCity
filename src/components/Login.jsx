@@ -2,6 +2,7 @@ import Swal from 'sweetalert2'
 import axios from 'axios';
 import {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
+import Loader from './Loader';
 
 
 const Login = () => {
@@ -14,6 +15,7 @@ const Login = () => {
     const [email,setEmail]=useState('');
     const [password,setPassword]=useState('');
     const [token,setToken] = useState('');
+    const [cargando,setCargando]= useState(true);
 
     localStorage.setItem('dataToken', token);
 
@@ -88,10 +90,14 @@ const enviar = () =>{
    verify();
   }
 
+  setTimeout(()=>{
+    setCargando(false)
+  },5000)
+
 
 
   return (
-    <div className="m-auto w-1/2 shadow-lg mt-4 mb-96">
+    cargando ? <Loader/> : <div className="m-auto w-1/2 shadow-lg mt-4 mb-96">
       <form onSubmit={handleSubmit} className="flex flex-col p-4 text-3xl w-2/5 m-auto mt-8">
         <label>Ingrese email
             <input onChange={(e) => {setEmail(e.target.value)}} className="w-full shadow-sm mt-4 mb-8 outline-none h-12" type="email" placeholder="Ingrese su email"/>
