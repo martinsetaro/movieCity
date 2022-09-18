@@ -36,13 +36,13 @@ const LogOut = () => {
 
   return (
     
-        <div className="m-auto w-1/2 shadow-lg mt-4">
-      <form className="flex flex-col p-4 text-3xl w-2/5 m-auto">
+        <div className="m-auto w-1/2 shadow-lg mt-4 mb-96">
+      <form className="flex flex-col p-4 text-3xl w-1/2 m-auto mt-14">
         <h2>Estas por cerrar sesión de cuenta!!</h2>
         <p>Si quieres salir presiona LogOut o sinó volver atras.</p>
         <button onClick={salir} 
         className="cursor-pointer h-16 rounded-md 
-        shadow-md mt-5 bg-orange text-white">LogOut</button>
+        shadow-md mt-5 bg-orange text-white">Log Out</button>
         <button onClick={regresar} 
         className="cursor-pointer h-16 rounded-md 
         shadow-md mt-5 bg-orange text-white">Atras</button>

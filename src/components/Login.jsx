@@ -94,7 +94,7 @@ const enviar = () =>{
     <div className="m-auto w-1/2 shadow-lg mt-4 mb-96">
       <form onSubmit={handleSubmit} className="flex flex-col p-4 text-3xl w-2/5 m-auto mt-8">
         <label>Ingrese email
-            <input onChange={(e) => {setEmail(e.target.value)}} className="w-full shadow-sm mt-4 mb-8 outline-none" type="email" placeholder="Ingrese su email"/>
+            <input onChange={(e) => {setEmail(e.target.value)}} className="w-full shadow-sm mt-4 mb-8 outline-none h-12" type="email" placeholder="Ingrese su email"/>
         </label>
         <label>Password
             <input onChange={(e) => {setPassword(e.target.value)}} className="w-full shadow-sm mt-4 mb-8 outline-none" type="password" placeholder="Ingrese su Password"/>
