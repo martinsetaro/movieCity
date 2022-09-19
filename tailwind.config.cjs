@@ -6,7 +6,8 @@ module.exports = {
       'negro': '#4a4a4a',
       'white':'#ffffff',
       'orange':'#FE461E',
-      'griso':'#3d3d3d'
+      'griso':'#3d3d3d',
+      'verde':'#3FC90B'
     }
     
   },

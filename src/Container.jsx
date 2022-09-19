@@ -5,6 +5,7 @@ import Login from './components/Login'
 import LogOut from './components/LogOut'
 import ItemMovies from './components/ItemMovies'
 import ItemSearch from './components/ItemSearch'
+import Favoritos from './components/Favoritos'
 
 
 const Container = () => {
@@ -18,6 +19,7 @@ const Container = () => {
      <Route path='/logout' element={<LogOut/>}/>
      <Route path='/movie/:id' element={<ItemMovies/>}/>
      <Route path='/itemSearch' element={<ItemSearch/>}/>
+     <Route path='/favoritos' element={<Favoritos/>}/>
     </Routes>
     </div>
   )
