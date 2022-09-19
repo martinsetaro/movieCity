@@ -41,7 +41,7 @@ const FirstPage = () => {
 
 
   return (
-    <div className='bg-negro pt-14'>
+    <div className='bg-negro pt-14 pb-40'>
       {token && <Buscador/>}
       <h1 className='text-center text-white uppercase text-5xl'>Peliculas en cartelera de cine</h1>
       <div className='w-full flex flex-wrap justify-between'>

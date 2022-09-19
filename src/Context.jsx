@@ -22,16 +22,25 @@ axios.get(url).then( res => {
 
 
 
+
 const ComponenteFavorito = (movieFavorita)=>{
-   setDatosGuardados([movieFavorita,...datosGuardados])
-  
+ const {titulo} = movieFavorita;
+ const datos=[...datosGuardados];
+ const nuevoDato = datos.filter( dato => dato.titulo != titulo)
+ setDatosGuardados([movieFavorita,...nuevoDato])
+ 
+}
+
+const removeItem = (id)=>{
+    const newCart = datosGuardados.filter(producto => producto.titulo != id);
+    setDatosGuardados(newCart);
 }
 
 
    
 
     return (
-        <Provider value={{buscarMovie,pelicula ,ComponenteFavorito , datosGuardados}}>
+        <Provider value={{buscarMovie,pelicula ,ComponenteFavorito , datosGuardados ,removeItem}}>
             {children}
         </Provider>
     );

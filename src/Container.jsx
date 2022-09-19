@@ -12,7 +12,7 @@ const Container = () => {
 
 
   return (
-    <div className='w-full'>
+    <div>
     <Routes>
      <Route path='/' element={<FirstPage/>}/>
      <Route path='/login' element={<Login/>}/>
