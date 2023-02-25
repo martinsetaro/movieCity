@@ -44,10 +44,10 @@ const FirstPage = () => {
     <div className='bg-negro pt-14 pb-40'>
       {token && <Buscador/>}
       <h1 className='text-center text-white uppercase text-5xl'>Peliculas en cartelera de cine</h1>
-      <div className='w-full flex flex-wrap justify-between'>
+      <div className='w-full flex flex-wrap justify-between pt-6'>
         {movie.map( movies =>{
           return(
-            <div key={movies.id} className="w-1/4 h-auto rounded-md p-3 mt-12 mb-12 bg-griso">
+            <div key={movies.id} className="w-1/3 h-auto rounded-md p-3 mt-12 mb-12 bg-griso">
               <h2 className='text-center text-2xl uppercase font-bold text-white mb-6'>{movies.title}</h2>
               <span onClick={handleClick} className='text-orange text-5xl absolute ml-3 cursor-pointer'><ion-icon name="heart"></ion-icon></span>
               <img  src={`http://image.tmdb.org/t/p/w500/${movies.poster_path}`}/>

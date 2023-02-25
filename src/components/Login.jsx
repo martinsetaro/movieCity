@@ -1,5 +1,4 @@
 import Swal from 'sweetalert2'
-import axios from 'axios';
 import {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import Loader from './Loader';
@@ -24,10 +23,8 @@ const Login = () => {
 const enviar = () =>{
 
 
-    axios.post('http://challenge-react.alkemy.org',{email , password})
-    .then(response => {
-         setToken(response.data.token);
-        if(response.status == 200){
+ 
+        if(email.toUpperCase() == 'ADMIN@ADMIN.COM' && password.toUpperCase() === 'ADMIN'){
           Swal.fire({
             position: 'center',
             icon: 'success',
@@ -35,7 +32,7 @@ const enviar = () =>{
             showConfirmButton: false,
             timer: 1500
           })
-           
+           setToken('exitoso');
           setTimeout(()=>{
          
             navigate('/');
@@ -44,19 +41,21 @@ const enviar = () =>{
           },2000)
 
                  
-           }
-      
-    })
-        .catch( err => {
-            if(err){
+           }else 
+           {
+
+            
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
                     text: 'Usuario no reconocido!',
                     footer: '<a href="">revise sus datos</a>'
                   })
-            }
-            console.log(err)})
+           }
+      
+    
+      
+            
 
 }
 
@@ -99,11 +98,13 @@ const enviar = () =>{
   return (
     cargando ? <Loader/> : <div className="m-auto w-1/2 shadow-lg mt-4 mb-96">
       <form onSubmit={handleSubmit} className="flex flex-col p-4 text-3xl w-2/5 m-auto mt-8">
-        <label>Ingrese email
-            <input onChange={(e) => {setEmail(e.target.value)}} className="w-full shadow-sm mt-4 mb-8 outline-none h-12" type="email" placeholder="Ingrese su email"/>
+        <p className='text-xl'>Email: admin@admin.com</p>
+        <p className='text-xl mb-8'>Password : admin</p>
+        <label className='text-xl'>Ingrese email
+            <input onChange={(e) => {setEmail(e.target.value)}} className="w-full shadow-sm mt-4 mb-8 outline-none h-12 border-b-2" type="email" placeholder="Ingrese su email"/>
         </label>
-        <label>Password
-            <input onChange={(e) => {setPassword(e.target.value)}} className="w-full shadow-sm mt-4 mb-8 outline-none" type="password" placeholder="Ingrese su Password"/>
+        <label className='text-xl'>Password
+            <input onChange={(e) => {setPassword(e.target.value)}} className="w-full shadow-sm mt-4 mb-8 outline-none border-b-2" type="password" placeholder="Ingrese su Password"/>
         </label>
         <input className="cursor-pointer h-16 rounded-md shadow-md mt-5 bg-orange text-white" type="submit" value="Enviar"/>
       </form>
