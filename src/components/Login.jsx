@@ -96,8 +96,8 @@ const enviar = () =>{
 
 
   return (
-    cargando ? <Loader/> : <div className="m-auto w-1/2 shadow-lg mt-4 mb-96">
-      <form onSubmit={handleSubmit} className="flex flex-col p-4 text-3xl w-2/5 m-auto mt-8">
+    cargando ? <Loader/> : <div className="m-auto w-4/5 shadow-lg mt-4 mb-96 sm:w-full">
+      <form onSubmit={handleSubmit} className="flex flex-col p-4 text-3xl w-2/5 m-auto mt-8 sm:w-full">
         <p className='text-xl'>Email: admin@admin.com</p>
         <p className='text-xl mb-8'>Password : admin</p>
         <label className='text-xl'>Ingrese email

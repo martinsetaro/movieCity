@@ -24,11 +24,11 @@ const ItemMovies = () => {
 
   return (
     cargando ? <Loader/> : 
-    <div className="w-full h-auto flex mb-96">
-      <div className="w-1/2 flex justify-center p-2">
+    <div className="w-full h-auto flex mb-96 sm:flex-col mt-6">
+      <div className="w-1/2 flex justify-center p-2 sm:w-full">
         <img src={`http://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="img"/>
       </div>
-      <div className="w-1/2 p-3 text-center">
+      <div className="w-1/2 p-3 text-center sm:w-full">
       
       <h2 className="text-5xl uppercase mt-6 mb-4">{movie.title}</h2>
       <h4 className="text-3xl mb-4">Titulo original : {movie.original_title}</h4>

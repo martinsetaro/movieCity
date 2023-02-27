@@ -26,12 +26,12 @@ const eliminar = (e)=>{
   return (
     <div className="w-full h-auto mb-96">
         <h2 className="text-5xl uppercase mt-6 mb-4 text-center">Favoritos</h2>
-        <div className="w-full h-auto flex justify-around">
+        <div className="w-full h-auto flex flex-wrap gap-1 justify-around sm:flex-col">
         {favorito.map( (datos,index) => {
             return(
-                <div key={index} className="w-1/4 p-3 text-center shadow-lg">
+                <div key={index} className="w-1/4 p-3 text-center shadow-lg sm:w-full">
                     <h2 className="text-3xl uppercase mt-6 mb-4">{datos.titulo}</h2>
-                    <img src={datos.imagen} alt="img"/>
+                    <img className="sm:m-auto" src={datos.imagen} alt="img"/>
                     <p className="text-2xl">{datos.texto}</p>
                     <button onClick={eliminar} className='bg-orange w-24 ml-3 text-white uppercase rounded-lg p-2 h-12 text-xl mt-4'>Quitar</button>
                 </div>
